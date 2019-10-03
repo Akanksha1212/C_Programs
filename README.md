@@ -5,4 +5,4 @@ Happy Hacktober! :octocat: This is a beginner friendly repository made specifica
 
 To make a pull request follow steps given in this website "https://thenewstack.io/getting-legit-with-git-and-github-your-first-pull-request/"
 
-The programs are written in C and compiled using GCC. To run the programs in TurboC++ read port_to_turboC.txt
+The programs are written in C and compiled using GCC. To run the programs in TurboC++ read port_to_turboC.md
