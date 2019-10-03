@@ -1,0 +1,21 @@
+To run the programs in TurboC/C++ replace "int main()" with "void main" and "return 0;" with "getch();".
+</br>
+Example:</br>
+
+#include<stdio.h>
+
+int main(){
+     printf("Hello World!! Happy Coding!!");
+     return 0;
+}
+
+Edited to:</br>
+
+#include<stdio.h>
+
+void main(){
+     printf("Hello World!! Happy Coding!!");
+     getch();
+}
+
+
