@@ -1,4 +1,10 @@
 #include<stdio.h>
+
+/*
+    Time Complexity : O(N)
+    Space Complexity : O(1)
+*/
+
 void main()
 {
 	float s=clock();
