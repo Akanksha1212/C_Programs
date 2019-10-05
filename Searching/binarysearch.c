@@ -1,5 +1,10 @@
 #include<stdio.h>
 
+/*
+    Time Complexity : O(logN)
+    Space Complexity : O(1)
+*/
+
 int binarySearch(int a[], int n, int target) { // function to find element
     int low = 0, high = n - 1;
     while (low <= high) {
