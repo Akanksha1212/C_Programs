@@ -5,7 +5,7 @@ Happy Hacktober! :octocat:
 This is a beginner friendly repository made specifically for Hacktoberfest that helps you get your first PR.
 The programs are written in C and compiled using GCC. To run the programs in TurboC++ read port_to_turboC.md
 
-## How to contribute to this project
+## How to contribute to this repository
 
 * Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
 * Clone your fork down to your local machine
