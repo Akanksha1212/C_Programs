@@ -4,7 +4,7 @@ int main(void) {
 	long long int a1,a2,a5,a10,a20,a50,a100,a200,a500,a2000,n1,n2,n5,n10,n20,n50,n100,n200,n500,n2000,N,T,i=0;
 	    
 // input total amount
-
+		printf("ENTER THE AMOUNT\n");
 	    scanf("%lld", &N);
 	    
 	    n2000=N/2000;//number of 2000 rupee note
