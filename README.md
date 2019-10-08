@@ -29,7 +29,7 @@ git commit -m 'Commit message'
 git push origin branch-name
 ```
 or
-* Add the file in the forked repository using upload file option then commt the changes in a new branch 
+* Add the file in the forked repository using upload file option then commit the changes in a new branch. 
 
 * Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
 * Wait for your PR review and merge approval!
