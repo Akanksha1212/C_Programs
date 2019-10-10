@@ -1,0 +1,24 @@
+// Find the minimum and maximum of 10 numbers accepted from user
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+
+	int i, n, max, min;
+	printf("\nEnter 1 number: ");
+	scanf("%d", &n);
+
+	min = max = n;
+	for(i = 2; i<=10; i++){
+
+		printf("\nEnter %d number: ", i);
+		scanf("%d", &n);
+
+		if(min>n)
+			min = n;
+		if(max<n)
+			max = n;
+	}
+	printf("\nMaximum = %d Minimum = %d", max, min);
+	return 0;
+}
