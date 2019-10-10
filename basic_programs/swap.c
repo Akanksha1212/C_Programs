@@ -1,4 +1,4 @@
-***************************SWAP WITHOUT THIRD VARIABLE********************************/
+/***************************SWAP WITHOUT THIRD VARIABLE********************************/
 
 #include <stdio.h>
 
