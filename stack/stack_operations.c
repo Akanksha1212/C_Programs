@@ -24,9 +24,9 @@ int pop()
     }
     else
     {
-        int temp = a[n];
+        int t = a[n];
         n--;
-        return temp;
+        return t;
     }
 }
 void print()
@@ -38,7 +38,7 @@ void print()
 
 }
 int main()
-{   int data,temp;
+{   int data,t;
     for(int j=0;j<max;j++)
         a[j]=0;
     int i=1;
@@ -56,9 +56,9 @@ int main()
             push(data);
             break;
     case 2:
-             temp = pop();
-            if(temp!=INT_MIN)
-            printf("%d",temp);
+             t = pop();
+            if(t!=INT_MIN)
+            printf("%d",t);
             break;
     case 3:
             print();
