@@ -3,7 +3,7 @@
 int main()
 {
         int a,b,c,d,e;
-        printf("Hello you are in alender, enter a year and you will able to see the day of its 1st january\n\n");
+        printf("Hello you are in Calender, enter a year and you will able to see the day of its 1st january\n\n");
         scanf("%d",&a);
         b=fabs(a-1900);
         c=b/4;
