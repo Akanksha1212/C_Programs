@@ -1,0 +1,15 @@
+#include<stdio.h>
+void toh(int n,char beg,char aux,char end)
+{
+toh(n-1,beg,end,aux);
+printf("%c to %c",aux,end);
+toh(n-1,aux,beg,end);
+}
+int main()
+{
+int n;
+char a='a',b='b',c='c';
+scanf("%d",&n);
+toh(n,a,b,c);
+return 0;
+}
