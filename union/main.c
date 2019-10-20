@@ -29,23 +29,23 @@
 
 	void notSoSimpleUnion()
 	{
-		int i;
+		int j;
 		union B unionB;
 		unionB.symbol = 's';
 		printf("symbol = %c\n", unionB.symbol);
 		unionB.number = 5;
 		printf("number = %d\n", unionB.number);
-		for(i = 0; i < 3; ++i)
-			unionB.numbers[i] = (float)i+1;
-		for(i = 0; i < 3; ++i)
-			printf("numbers[%d] = %.2f, ", i, unionB.numbers[i]);
+		for(j = 0; j < 3; ++j)
+			unionB.numbers[j] = (float)j+1;
+		for(j = 0; j < 3; ++j)
+			printf("numbers[%d] = %.2f, ", j, unionB.numbers[j]);
 
 		printf("\n");
 		printf("\n");
 		printf("symbol = %c\n", unionB.symbol);
 		printf("number = %d\n", unionB.number);
-		for(i = 0; i < 3; ++i)
-			printf("numbers[%d] = %.2f, ", i, unionB.numbers[i]);
+		for(j = 0; j < 3; ++j)
+			printf("numbers[%d] = %.2f, ", j, unionB.numbers[j]);
 		printf("\n");
 		printf("The size of union of 1 char, 1 int and array of 3 floats is %d bytes.\n", sizeof unionB);
 	}
