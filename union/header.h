@@ -1,7 +1,7 @@
 #include<stdio.h>
 
-#include"unionA.h"
-#include"unionB.h"
+#include"unionC.h"
+#include"unionD.h"
 
 void simpleUnion();
 void notSoSimpleUnion();
