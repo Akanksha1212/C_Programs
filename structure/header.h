@@ -7,7 +7,7 @@
 #include"address.h";
 #include"employee.h";
 
-void inputEmployee(struct Employee* worker);
+void inputEmployee(struct Emp* worker);
 void inputAddress(struct Address* address);
 void outputEmployee(struct Employee worker);
 void outputAddress(struct Address address);
