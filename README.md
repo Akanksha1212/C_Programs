@@ -34,6 +34,6 @@ or
 * Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
 * Wait for your PR review and merge approval!
 
-If you are still facing any problem follow steps given in this [website]( "https://thenewstack.io/getting-legit-with-git-and-github-your-first-pull-request/")
+If you are still facing any problem follow steps given in this [website](https://thenewstack.io/getting-legit-with-git-and-github-your-first-pull-request/)
 
 
