@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 int main ()
 {
 int num;
@@ -10,13 +11,6 @@ if(num<0)
 printf("square root of a negative no is not possible\n");
 return 0;
 }
-temp=0;
-sqr=num/2;
-while(sqr!=temp)
-{
-temp=sqr;
-sqr=(num/sqr+sqr)/2;
-}
-printf("square root(%d) is %f\n",num,sqr);
+printf("square root(%d) is %.3f\n",num,sqrt(num));
 return 0;
 }
