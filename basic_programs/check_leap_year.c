@@ -12,15 +12,15 @@ int main()
         if( y % 100 == 0)
         {
             if ( y % 400 == 0)
-                printf("%d is a Leap Year", y);
+                printf("%d is a LEAP Year", y);
             else
-                printf("%d is not a Leap Year", y);
+                printf("%d is not a LEAP Year", y);
         }
         else
-            printf("%d is a Leap Year", y );
+            printf("%d is a LEAP Year", y );
     }
     else
-        printf("%d is not a Leap Year", y);
+        printf("%d is not a LEAP Year", y);
 
     return 0;
 }
