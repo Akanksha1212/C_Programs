@@ -1,36 +1,37 @@
-// C program for implementation of Bubble sort 
-#include <stdio.h> 
-void swap(int *xp, int *yp) 
-{ 
-	int temp = *xp; 
-	*xp = *yp; 
-	*yp = temp; 
+// C program for implementation of Bucket sort 
+#include <stdio.h>
+ 
+/* Function for bucket sort */
+void Bucket_Sort(int array[], int n)
+{  
+    int i, j;  
+    int count[n]; 
+    for (i = 0; i < n; i++)
+        count[i] = 0;
+ 
+    for (i = 0; i < n; i++)
+        (count[array[i]])++;
+ 
+    for (i = 0, j = 0; i < n; i++)  
+        for(; count[i] > 0; (count[i])--)
+            array[j++] = i;
 } 
 
-void bubbleSort(int arr[], int n) 
-{ 
-int i, j; 
-for (i = 0; i < n-1; i++)	 
 
-	for (j = 0; j < n-i-1; j++) 
-		if (arr[j] > arr[j+1]) 
-			swap(&arr[j], &arr[j+1]); 
-} 
+int main()
+{
+    int array[100], i, num; 
+ 
+    printf("Enter the size of array : ");   
+    scanf("%d", &num);   
+    printf("Enter the %d elements to be sorted:\n",num); 
+    for (i = 0; i < num; i++)
+        scanf("%d", &array[i]); 
 
-void printArray(int arr[], int size) 
-{ 
-	int i; 
-	for (i=0; i < size; i++) 
-		printf("%d ", arr[i]); 
-	printf("\n"); 
-} 
-
-int main() 
-{ 
-	int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
-	int n = sizeof(arr)/sizeof(arr[0]); 
-	bubbleSort(arr, n); 
-	printf("Sorted array: \n"); 
-	printArray(arr, n); 
-	return 0; 
-} 
+    printf("\nArray after sorting : \n"); 
+    Bucket_Sort(array, num); 
+    for (i = 0; i < num; i++)
+        printf("%d ", array[i]);   
+    printf("\n");     
+    return 0;
+}
