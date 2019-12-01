@@ -1,4 +1,8 @@
+//imports
 #include <stdio.h>
+
+
+//main function
 int main()
 {
     int i, space, rows, k=0;
