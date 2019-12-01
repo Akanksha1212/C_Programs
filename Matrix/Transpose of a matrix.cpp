@@ -1,8 +1,12 @@
+
+//imports
 #include <iostream>
 using namespace std;
+
+//main function
 int main()
 {
-    int arr[50][50], trans[50][50], r, c, i, j;
+    int arr[50][50], trans[50][50], r, c, i, j; //data memory allocation
     cout << "Enter rows and columns of matrix : ";
     cin >> r >> c;
     // Entering the elements in the matrix by user.
