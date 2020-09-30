@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int a[100], n, elem, i, pos;
+int a[100], n, element, i, pos;
 void create() 
 {
     printf("\nEnter the size of the array elements: ");
