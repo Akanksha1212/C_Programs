@@ -23,12 +23,12 @@ void insert()
     printf("\nEnter the position for the new element: ");
     scanf("%d", &pos);
     printf("\nEnter the element to be inserted: ");
-    scanf("%d", &elem);
+    scanf("%d", &element);
     for(i=n-1; i>=pos; i--)
     {
         a[i+1] = a[i];
     }
-    a[pos] = elem;
+    a[pos] = element;
     n = n+1;
 } 
 void del()
@@ -41,7 +41,7 @@ void del()
         a[i] = a[i+1];
     }
     n = n-1;
-    printf("\nThe deleted element is = %d", elem);
+    printf("\nThe deleted element is = %d", element);
 }
 void main()
 {
