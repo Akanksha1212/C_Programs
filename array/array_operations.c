@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int a[100], n, element, i, pos;
+int a[100], n, ele, i, pos;
 void create() 
 {
     printf("\nEnter the size of the array elements: ");
@@ -23,25 +23,25 @@ void insert()
     printf("\nEnter the position for the new element: ");
     scanf("%d", &pos);
     printf("\nEnter the element to be inserted: ");
-    scanf("%d", &element);
+    scanf("%d", &ele);
     for(i=n-1; i>=pos; i--)
     {
         a[i+1] = a[i];
     }
-    a[pos] = element;
+    a[pos] = ele;
     n = n+1;
 } 
 void del()
 {
     printf("\nEnter the position of the element to be deleted: ");
     scanf("%d", &pos);
-    elem = a[pos];
+    ele = a[pos];
     for(i=pos; i<n-1; i++)
     {
         a[i] = a[i+1];
     }
     n = n-1;
-    printf("\nThe deleted element is = %d", element);
+    printf("\nThe deleted element is = %d", ele);
 }
 void main()
 {
