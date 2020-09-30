@@ -1,26 +1,20 @@
-//imports
 #include <stdio.h>
 
-
-//main function
 int main()
 {
-    int i, space, rows, k=0;
-    printf("Enter number of rows: ");
-    scanf("%d",&rows);
-    for(i=1; i<=rows; ++i, k=0)
-    {
-        for(space=1; space<=rows-i; ++space)
-        {
-            printf("  ");
-        }
-        while(k != 2*i-1)
-        {
-            printf("* ");
-            ++k;
+    int row;
+    scanf("%d",&row);
+    for(int i=0;i<row;i++){
+        for(int j=1;j<=2*row;j++){
+            if(j>=row-i&&j<=row+i){
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
         }
         printf("\n");
     }
-    
+
     return 0;
 }
