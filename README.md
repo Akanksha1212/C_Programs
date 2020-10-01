@@ -1,4 +1,4 @@
-# C_Programs
+# C_Programs Repository
 
 Happy Hacktober! :octocat:  
 
