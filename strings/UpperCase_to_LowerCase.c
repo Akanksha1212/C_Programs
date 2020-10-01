@@ -10,11 +10,11 @@ void main()
 	int i;
 	
 	printf("Enter a string:");
-	scanf("%s",&ch);
+	gets(ch);
 	
 	for(i=0;i<=strlen(ch);i++)
 	{
-		if(ch[i]>=65&&ch[i]<=90)
+		if(ch[i]>=65 && ch[i]<=90)
 		{
 			ch[i]=ch[i]+32;
 		}
