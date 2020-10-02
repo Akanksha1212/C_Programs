@@ -1,16 +1,21 @@
-#include<stdio.h>
-#include<math.h>
+#include<iostrem>
+using namespace std;              //std namespace is useful in c++ programing...
 int main ()
 {
-int num;
+float num;                        //the data-type of num is float so user can give decimal values...
 float sqr,temp;
-printf("enter the number\n");
-scanf("%d",&num);
+cout<<("enter the number\n")<<"/n";
+
 if(num<0)
 {
-printf("square root of a negative no is not possible\n");
+printf("square root of a negative no is not possible\n");                       //if number is negative...
+return 0;
+}
+elif(num==0)
+{
+printf("the by default root of 0 is always 0");                                 //if number is equal to zero....
 return 0;
 }
 printf("square root(%d) is %.3f\n",num,sqrt(num));
-return 0;
+return 0;                                                                       //if natural number is given by user...
 }
