@@ -2,7 +2,7 @@
 int main()
 {
 	int a;
-	printf("Enter a year you want to check whether it is aleap year or not\n");
+	printf("Enter a year you want to check whether it is a leap year or not\n");
 	scanf("%d",&a);
 
 	if(a%100==0)
