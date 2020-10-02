@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-int t, n, a, sum=0, i;
+int t, n, a, sum=0, i; //initialise sum=0,otherwise it will contain a garbage value
 scanf("%d", &t);
 for(i=0; i<t; i++)
 { sum=0;
