@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"swapping of program"<<endl;
+	int x,y,temp;
+	cout<<"Enter the value of x:"<<endl;
+	cin>>x;
+	cout<<"Enter the value of y:"<<endl;
+	cin>>y;
+	cout<<"before swapping"<<endl;
+	cout<<"x ="<<x<<endl;
+	cout<<"y ="<<y<<endl;
+	
+    temp=x;
+    x=y;
+    y=temp;
+	
+	
+	cout<<"after swapping"<<endl;
+	cout<<"x ="<<x<<endl;
+	cout<<"y ="<<y<<endl;
+	
+	return 0;
+}
