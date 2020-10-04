@@ -17,7 +17,7 @@ struct node
 {
   int value;
   Bool color;
-  RBNode *left, *right, *parent;
+  RBNode *left, *right;
 };
 
 static void freeAllNodes(RBNode *node);
@@ -25,6 +25,8 @@ static void freeAllNodes(RBNode *node);
 static void freeNode(RBNode *node);
 
 static RBNode * createNode(int value);
+
+static RBNode * insertOnTree(RBNode *node, int value);
 
 static Bool isRed(RBNode *node);
 
@@ -38,11 +40,11 @@ static void printTreeUtil(RBNode *node, int space);
 
 void freeTree(RBNode *root);
 
-void insert(RBNode *root, int value);
+RBNode * insert(RBNode *root, int value);
 
 void printTree(RBNode *root);
 
-// ---------------------------------------------------------------
+/* --------------------------------------------------------------- */
 
 void freeTree(RBNode *root) {
   if (root == NULL) {
@@ -60,7 +62,7 @@ static void freeAllNodes(RBNode *root) {
   }
 }
 
-// ---------------------------------------------------------------
+/* --------------------------------------------------------------- */
 
 RBNode * createTree(int value) {
   return createNode(value);
@@ -72,23 +74,23 @@ RBNode * createNode(int value) {
   newNode->color = RED;
   newNode->left = NULL;
   newNode->right = NULL;
-  newNode->parent = NULL;
+  return newNode;
 }
 
-// ---------------------------------------------------------------
+/* --------------------------------------------------------------- */
 
-void insert(RBNode *root, int value) {
-  root = insertNode(root, value);
+RBNode * insert(RBNode *root, int value) {
+  return insertOnTree(root, value);
 }
 
-RBNode * insertNode(RBNode *node, int value) {
+static RBNode * insertOnTree(RBNode *node, int value) {
   if (node == NULL) return createNode(value);
 
   int nodeVal = node->value;
 
-  if (nodeVal < value) node->right = insertNode(node->right, value);
-  else if (nodeVal > value) node->left = insertNode(node->left, value);
-  else return; // No duplicated values
+  if (nodeVal < value) node->right = insertOnTree(node->right, value);
+  else if (nodeVal > value) node->left = insertOnTree(node->left, value);
+  else return; /* No duplicated values */
 
   if (isRed(node->right) && !isRed(node->left)) {
     node = rotateLeft(node);
@@ -121,11 +123,11 @@ RBNode * rotateLeft(RBNode *node) {
 
 RBNode * rotateRight(RBNode *node) {
   RBNode *aux = node->left;
-  n->left = aux->right;
-  x->right = n;
-  x->color = x->right->color;
-  x->right->color = RED;
-  return x;
+  node->left = aux->right;
+  aux->right = node;
+  aux->color = aux->right->color;
+  aux->right->color = RED;
+  return aux;
 }
 
 static void flipColors(RBNode *node) {
@@ -134,7 +136,7 @@ static void flipColors(RBNode *node) {
   node->right->color = !node->right->color;
 }
 
-// ---------------------------------------------------------------
+/* --------------------------------------------------------------- */
 
 void printTree(RBNode *root) {
   printTreeUtil(root, 0);
@@ -154,27 +156,29 @@ static void printTreeUtil(RBNode *node, int space) {
   printTreeUtil(node->left, space);
 }
 
-// Tests ---------------------------------------------------------
+/* --------------------------------------------------------------- */
 
-void main() {
+int main() {
   // creation test
   RBNode *root = createTree(50);
   printTree(root);
   // Insertion test
-  insert(root, 10);
-  insert(root, 20);
-  insert(root, 60);
-  insert(root, 40);
-  insert(root, 80);
-  insert(root, 56);
-  insert(root, 90);
-  insert(root, 30);
-  insert(root, 100);
-  insert(root, 6);
-  insert(root, 97);
-  insert(root, 67);
-  insert(root, 92);
+  root = insert(root, 10);
+  root = insert(root, 20);
+  root = insert(root, 60);
+  root = insert(root, 40);
+  root = insert(root, 80);
+  root = insert(root, 56);
+  root = insert(root, 90);
+  root = insert(root, 30);
+  root = insert(root, 100);
+  root = insert(root, 6);
+  root = insert(root, 97);
+  root = insert(root, 67);
+  root = insert(root, 92);
   printTree(root);
   // free memory
   freeTree(root);
+
+  return 0;
 }
