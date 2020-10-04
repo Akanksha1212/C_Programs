@@ -153,3 +153,28 @@ static void printTreeUtil(RBNode *node, int space) {
   printf("%d\n", node->value);
   printTreeUtil(node->left, space);
 }
+
+// Tests ---------------------------------------------------------
+
+void main() {
+  // creation test
+  RBNode *root = createTree(50);
+  printTree(root);
+  // Insertion test
+  insert(root, 10);
+  insert(root, 20);
+  insert(root, 60);
+  insert(root, 40);
+  insert(root, 80);
+  insert(root, 56);
+  insert(root, 90);
+  insert(root, 30);
+  insert(root, 100);
+  insert(root, 6);
+  insert(root, 97);
+  insert(root, 67);
+  insert(root, 92);
+  printTree(root);
+  // free memory
+  freeTree(root);
+}
