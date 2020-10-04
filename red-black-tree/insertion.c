@@ -26,10 +26,6 @@ static void freeNode(RBNode *node);
 
 static RBNode * createNode(int value);
 
-static RBNode * moveRedLeft(RBNode *node);
-
-static RBNode * moveRedRight(RBNode *node);
-
 static Bool isRed(RBNode *node);
 
 static RBNode * rotateLeft(RBNode *node);
@@ -109,6 +105,35 @@ RBNode * insertNode(RBNode *node, int value) {
   return node;
 }
 
+static Bool isRed(RBNode *node) {
+  if (node == NULL) return FALSE;
+  return node->color;
+}
+
+RBNode * rotateLeft(RBNode *node) {
+  RBNode *aux = node->right;
+  node->right = aux->left;
+  aux->left = node;
+  aux->color = aux->left->color;
+  aux->left->color = RED;
+  return aux;
+}
+
+RBNode * rotateRight(RBNode *node) {
+  RBNode *aux = node->left;
+  n->left = aux->right;
+  x->right = n;
+  x->color = x->right->color;
+  x->right->color = RED;
+  return x;
+}
+
+static void flipColors(RBNode *node) {
+  node->color = !node->color;
+  node->left->color = !node->left->color;
+  node->right->color = !node->right->color;
+}
+
 // ---------------------------------------------------------------
 
 void printTree(RBNode *root) {
@@ -128,5 +153,3 @@ static void printTreeUtil(RBNode *node, int space) {
   printf("%d\n", node->value);
   printTreeUtil(node->left, space);
 }
-
-// TREE MANIPULATION ---------------------------------------------
