@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x;
+	cout<<"Enter The Year"<<endl;
+	cin>>x;
+	if(x%4==0)
+	{
+		if(x%100==0)
+		{
+			if(x%400==0)
+			{
+				cout<<"this is a leap year";
+			}
+			else
+			{
+				cout<<"this is'nt a leap year"<<endl;
+			}
+		}
+		else
+		{
+			cout<<"this is a leap year";
+		}
+		
+	}
+	else		
+		{
+		cout<<"this is'nt a leap year"<<endl;
+		}
+	
+
+	return 0;
+}
