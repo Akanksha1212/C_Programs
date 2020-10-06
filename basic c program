@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main ()
+{
+int num;
+float sqr,temp;
+printf("enter the number\n");
+scanf("%d",&num);
+if(num<0)
+{
+printf("square root of a negative no is not possible\n");
+return 0;
+}
+printf("square root(%d) is %.3f\n",num,sqrt(num));
+return 0;
+}
