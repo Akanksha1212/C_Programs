@@ -2,7 +2,7 @@
 main()
 {
     char ch;
-    printf("Enter the character: ");
+    printf("Enter the character whose ascii value is to be found: ");
     scanf("%c",&ch);
-    printf("The ascii value of the given character is %d",ch);
+    printf("The ascii value of the input character is %d",ch);
 }
