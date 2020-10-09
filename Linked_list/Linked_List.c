@@ -1,122 +1,138 @@
+// Forward Linked List
 #include<stdio.h>
 #include<stdlib.h>
-// Forward Linked List
-struct List{
+
+struct List
+{
 	int value ;  
 	struct List *node; 
 };
-struct List *head = NULL;
-int numElem = 0;
-int InsertEnd(int v)
-{
 
-	struct List *newNode =(struct List*) malloc(sizeof(struct List));
+struct List *head = NULL;	// Global variable (Accessible anywhere in the code)
+int numElem = 0;		// Global variable (Accessible anywhere in the code)
+
+void InsertEnd (int v)	// Insert value "v" at the end of a linked list
+{
+	struct List *newNode = (struct List*) malloc(sizeof(struct List));
 	newNode -> value = v;
-	newNode->node= NULL;
-	if(head==NULL){
+	newNode -> node= NULL;
+	if (head == NULL)
 		head= newNode;
-	}
-	else{
+	else
+	{
 		struct List *temp ;
 		temp = head;
-		while(temp->node!=NULL){
+		while (temp->node != NULL)
+		{
 			temp = temp->node;
 		}
 		temp->node = newNode; 
-		
-		}
+	}
 	numElem++;
-	
 }
-int PrintLinkedList(){
+
+void PrintLinkedList()	// Print the linked list
+{
 	printf("\n");
-	if(numElem ==0 ){
+	if (numElem == 0)
 		printf("\n Linked List Empty  :( ");
-	}
-	else {
+	else
+	{
 		struct List *temp;
-		temp =head ;
-		while(temp !=NULL){
+		temp = head ;
+		while (temp != NULL)
+		{
 			printf(" %d ",temp->value);
-			temp=temp->node;
+			temp = temp->node;
 		}
-		
 	}
 }
-int InsertPosition(int v, int pos ){
-	struct List *newNode =(struct List*) malloc(sizeof(struct List));
-	newNode->value = v;
-	if( numElem >= pos ){
-		struct List *temp;
+
+void InsertPosition (int v, int pos)	// Insert value "v" at position "pos"
+{
+	if (numElem >= pos)
+	{
 		struct List *newNode = (struct List *)malloc(sizeof(struct List));
 		newNode->value = v;
-		if(pos==1){
-		newNode->node = head;
-		head=newNode;
+		if (pos == 1)
+		{
+			newNode->node = head;
+			head = newNode;
 		}
-		else{
-			struct List *temp2;
-			temp=head;
-			for(int i=0; i<numElem-1;i++){
-			temp=temp->node;
+		else
+		{
+			struct List *temp;
+			temp = head;
+			for (int i = 0; i < pos - 2; i++)
+			{
+				temp=temp->node;
 			}
-			temp2= temp->node ; 	
-			temp->node = newNode;
-			newNode->node = temp2; 
-
+			newNode->node= temp->node ; 	
+			temp->node = newNode; 
 		}
 		numElem++;
 	}
-	else {
+	else
+	{
 		printf("\n Linked List Position N/A  :0 ");
 	}
 }
 
-int deletePos (int pos){
-	if (numElem >= pos){
-		if(numElem == 1 ){
+void deletePos (int pos)	// Delete position "pos" in the linked list
+{
+	if (numElem >= pos)
+	{
+		if(numElem == 1 || pos == 1)
+		{
 			struct List* temp;
-			temp = head ; 
+			temp = head ;
+			head = temp->node;
 			free(temp);
-			head= NULL;
 		}
-		else{ 
+		else
+		{ 
 			struct List* temp ; 
 			struct List* temp2; 
-			temp=head;
-			for (int i= 0 ; i < pos - 2 ; i++){
+			temp = head;
+			for (int i = 0; i < pos - 2; i++)
+			{
 				temp = temp->node;
 			}
 			temp2=temp->node;
 			temp->node = temp2->node;
 			free(temp2);
-			
 		}
 		numElem--; 
 	}
-	else{
+	else
+	{
 		printf("Position not available"); 
 	}
 }
 
-int deleteLinkedList(){
-	if(numElem==0){
+void deleteLinkedList()	// Delete the whole linked list
+{
+	if (numElem == 0)
+	{
 		printf("\n List is Empty :X ");
 	}
-	else { 
+	else 
+	{ 
 		struct List* temp ;
 		struct List* del;
-		temp=head;
-		while(temp!=NULL){
+		temp = head;
+		while (temp != NULL)
+		{
 			del = temp;
-			temp=temp->node;
-			numElem--;
+			temp = temp->node;
 			free(del);
+			numElem--;
 		}
 	}
 }
-void main(){
 
+void main()
+{
 	InsertEnd(34);
 	PrintLinkedList();
 	InsertEnd(2);
@@ -133,5 +149,4 @@ void main(){
 	PrintLinkedList();
 	deleteLinkedList();
 	deleteLinkedList();
-
 }
