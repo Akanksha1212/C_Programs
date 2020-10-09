@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+  char a[10];
+  int b[26]={0},i;
+  scanf("%s",a);
+  for(i=0;a[i]!='\0';i++)
+  {
+    if(a[i]>='a' && a[i]<='z')
+    {
+      b[a[i]-97]++;
+    }
+  }
+  for(i=0;i<26;i++)
+  {if(b[i]!=0)
+    printf("%c->%d\n",97+i,b[i]);
+  }
+}
