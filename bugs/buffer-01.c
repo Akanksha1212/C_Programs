@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     printf("Please specify a name as argument!");
     exit(1);
   }
-  memcpy(buffer, argv[1], strlen(argv[1])); // Buffer overflow. This is a bug
+  memcpy(&buffer, (void*)argv[1], strlen(argv[1])); // Buffer overflow. This is a bug
   printf("Welcome to this bug program %s\n", name);
   
   // if more bytes are written to the buffer name located on the stack than 16 bytes, the data will overflow into isAdmin demonstrating the security bug.
