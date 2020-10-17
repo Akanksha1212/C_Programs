@@ -10,7 +10,7 @@ struct bst * insert(int data,struct bst * head)
 {
     if(head==NULL)
     {
-        struct bst * temp = (struct bst *)malloc(sizeof(struct bst));
+        struct bst * temp = new bst();
         temp->left=NULL;
         temp->right=NULL;
         temp->data=data;
