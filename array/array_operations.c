@@ -29,7 +29,7 @@ void insert()
         a[i+1] = a[i];
     }
     a[pos] = elem;
-    n = n+1;
+   n++;
 } 
 void del()
 {
@@ -40,7 +40,7 @@ void del()
     {
         a[i] = a[i+1];
     }
-    n = n-1;
+ n--;
     printf("\nThe deleted element is = %d", elem);
 }
 void main()
