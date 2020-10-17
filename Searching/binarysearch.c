@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 
 /*
     Time Complexity : O(logN)
@@ -6,7 +7,7 @@
 */
 
 int binarySearch(int a[], int n, int target) { // function to find element
-    int low = 0, high = n - 1;
+    int low = 0, high = n - 1;                 // low=first element, high=last element
     while (low <= high) {
         int mid = (low + high) / 2;
         if (a[mid] < target) { 
@@ -24,7 +25,7 @@ int main() {
 
     int n = 5, found = -1, target = 6;
     int a[] = {1, 2, 3, 4, 5}; // array needs to be sorted in ascending order
-    
+    clrscr();
     found = binarySearch(a, n, target);
 
     if (found == -1) {
@@ -34,5 +35,5 @@ int main() {
     }
 
     return 0;
-
+    getch();
 }

@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 
 /*
     Time Complexity : O(N)
@@ -9,15 +10,16 @@ void main()
 {
 	float s=clock();
 	int arr[100],c,search,n;
+	clrscr();
 	printf("Enter the size of array");
 	scanf("%d",&n);
 	printf("Enter %d element in array",n);
-	for(c=0;c<n;c++)
+	for(c=0;c<n;c++)                        //taking input
 	{
 		scanf("%d",&arr[c]);
 	}
 	printf("Enter the element to be search");
-	scanf("%d",&search);
+	scanf("%d",&search);                      //item searching
 	for(c=0;c<n;c++)
 	{
 		if(arr[c]==search)
@@ -36,4 +38,5 @@ void main()
 	printf("\n %f",s);
 	printf("\n %f",e);
 	printf("\n %f",p);
+	getch();
 }
