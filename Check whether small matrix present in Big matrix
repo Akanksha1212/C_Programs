@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main(void) {
+  int row,col,size,x=0,y=0,flag=0,count=0,smallsize;
+  printf("enter size of Big Matrix: ");
+  scanf("%d",&size);
+  int bigmatrix[size][size];
+   printf("enter size of Small Matrix: ");
+     scanf("%d",&smallsize);
+  int smallmatrix[smallsize][smallsize];
+  for(row=0;row<size;row++)
+  {
+    for(col=0;col<size;col++)
+    {
+      scanf("%d",&bigmatrix[row][col]);
+    }
+  }
+  for(row=0;row<smallsize;row++)
+  {
+    for(col=0;col<smallsize;col++)
+    {
+      scanf("%d",&smallmatrix[row][col]);
+    }
+  }
+   for(row=0;row<size;row++)
+  {
+    for(col=0;col<size;col++)
+    {
+      if(bigmatrix[row][col]==smallmatrix[x][y])
+      {
+        count++;
+     
+      
+        if(y<smallsize)
+        {
+          y++;
+        }
+       
+        if(y>=smallsize)
+        {
+          x++;
+          y=0;
+        }
+      
+      if(count==smallsize*smallsize)
+      {
+        flag=1;
+      }
+      }  
+    }
+  }
+ if(flag==1)
+ {
+   printf("true");
+ }
+ else
+ {
+   printf("false");
+ }
+
+
+}
