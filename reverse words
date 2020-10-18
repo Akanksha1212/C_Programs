@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include<string.h>
+int main() {
+  char a[35];
+  printf("enter a string: ");
+  scanf("%[^\n]s",a); //example hello world
+  int l=strlen(a);
+  int d=l;
+  printf("output : ");
+  for(int i=l-1;i>=0;i--)
+  {
+    if(a[i]==' ' || i==0)
+    {
+      if(i==0)
+      {
+        printf(" ");
+      }
+      for(int j=i;j<d;j++)
+      {
+        printf("%c",a[j]); // output: world hello
+      }
+     d=i;
+    }
+   
+  }
+}
