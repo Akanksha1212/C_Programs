@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main()
+{
+  char tens[][10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
+  char twenty_s[][10]={",","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","ninteen"};
+  char big_place[][10]={",","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninty","eighteen","ninteen"};
+  int a;
+  printf("Enter a number from 0 to 999: "); //example 34
+  scanf("%d",&a);
+  if(a>=0 && a<=9)
+  {
+    printf("%s",tens[a]);
+  }
+  else if(a>=11 && a<=19)
+  {
+    printf("%s",twenty_s[a%10]);
+  }
+  else if(a==10)
+  {
+    printf("ten");
+  }
+  else if(a>=20 && a<=100)
+  {
+    if(a==100)
+    {
+      printf("hundred");
+    }
+    else
+    {
+      printf("%s %s",big_place[(a/10)-1],tens[a%10]);
+    }
+
+  }
+  else if(a>=101 && a<=999)
+  {
+    int summer;
+    summer=a%100;
+    if(summer>=11 && summer<=19)
+    {
+       printf("%s hundred and %s ",tens[a/100],twenty_s[(summer%10)]);
+    }
+    else if(summer%10==0)
+    {
+       summer=summer/10;
+        printf("%s hundred and %s ",tens[a/100],big_place[(summer-1)]);
+    }
+    else
+    {
+    int sum=summer%10;
+    summer=summer/10;
+    printf("%s hundred and %s %s",tens[a/100],big_place[summer-1],tens[sum]);  //output thrity four
+    }
+  }
+}
