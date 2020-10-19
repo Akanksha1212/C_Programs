@@ -1,19 +1,20 @@
-// o(1) code to find the missing number in an array of 1 to N numbers
+#include <stdio.h>
 
-#include<stdio.h>
-
-void main()
+/* getMissingNo takes array and size of array as arguments*/
+int getMissingNo(int a[], int n)
 {
-	int n;
-	printf("Enter the total no of numbers:");
-	scanf("%d",&n);
-	int a[n];
-	printf("Enter 1 to %d by leaving one number",n);
-	int i,sum=0;
-	for(i=0;i<n-1;i++)
-	{
-		scanf("%d",&a[i]);
-		sum += a[i];
-	}
-	printf("%d is the missing number",n*(n+1)/2 - sum);
+	int i, total;
+	total = (n + 1) * (n + 2) / 2;
+	for (i = 0; i < n; i++)
+		total -= a[i];
+	return total;
+}
+
+/*program to test above function */
+int main()
+{
+	int a[] = { 1, 2, 4, 5, 6 };
+	int miss = getMissingNo(a, 5);
+	printf("%d", miss);
+	getchar();
 }
