@@ -2,7 +2,7 @@
 
 #include<stdio.h>
 
-void main()
+int main()
 {
 	int n;
 	printf("Enter the total no of numbers:");
@@ -16,4 +16,5 @@ void main()
 		sum += a[i];
 	}
 	printf("%d is the missing number",n*(n+1)/2 - sum);
+        return 0;
 }
