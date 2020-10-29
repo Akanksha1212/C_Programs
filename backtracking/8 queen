@@ -1,0 +1,93 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int Mat[9][9];
+int result=1, vetor[9];
+int FixColum,FixLinha;
+
+void SurubinhaDeLeve(){
+	for(int i=0; i<8;i++){
+		for(int j=0 ; j<8;j++){
+			if(Mat[i][j]==1){
+				vetor[j]=i+1;
+			}
+		}
+	}
+	if(result <10){
+		cout << " "<<result << "      ";
+	}
+	else{
+		cout <<result << "      ";
+	}
+	for(int i=0; i<8;i++){
+		if(i==7){
+			cout << vetor[i] << endl;
+		}
+		else{
+			cout << vetor[i] << " ";
+		}
+	}
+	result++;
+
+}
+bool Buscar(int Lin, int Col){
+	for(int i=0;i< Col;i++){
+		if(Mat[Lin][i]){
+			return false;
+		}
+	}
+	for(int i= Lin-1, j= Col-1; i>=0 && j>=0; i--,j--){
+		if(Mat[i][j]){
+			return false;
+		}
+	}
+	for(int i= Lin+1, j= Col-1; i<8 && j >=0;i++,j--){
+		if(Mat[i][j]){
+			return false;
+		}
+	}
+	return true;
+}
+
+void BT(int C){
+    if(C==8){
+        SurubinhaDeLeve();
+	}
+    if(FixColum==C){
+        if(Buscar(FixLinha,FixColum)){
+            Mat[FixLinha][FixColum]=1;
+            BT(C+1);
+        }
+        return;
+    }
+	for(int i=0 ; i < 8;i++){
+		if(Buscar(i,C)){
+			Mat[i][C]=1;
+			BT(C+1);
+			Mat[i][C]=0;
+		}
+	}
+}
+
+int main(){
+	int QuantC;
+	scanf("%d", &QuantC);
+	while(QuantC--){
+	    result=1;
+	    for(int i=0;i<9;i++){
+	    		vetor[i]=0;
+			for(int j=0; j<9;j++){
+				Mat[i][j]=0;
+			}
+		}
+		cout<< "SOLN       COLUMN\n #      1 2 3 4 5 6 7 8\n\n";
+		scanf("%d %d", &FixLinha, &FixColum);
+          FixColum--;
+          FixLinha--;
+		BT(0);
+		if(QuantC!=0){
+			cout << endl;
+		}
+
+	}
+}
