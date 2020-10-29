@@ -1,0 +1,47 @@
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i[1000],p[1000],x,y,contI=0,contP=0,j;
+    cin>>y;
+    for(j=0;j<y;j++){
+        cin >> x;
+        if(x%2==0){
+            p[contP]=x;
+            contP++;
+        }
+        else{
+            i[contI]=x;
+            contI++;
+        }
+    }
+    int aux;
+    for (int k = 1; k < contP; k++) {
+        for ( j = 0; j < contP - 1; j++) {
+           
+            if (p[j] > p[j + 1]) {
+                aux          = p[j];
+                p[j]     = p[j + 1];
+                p[j + 1] = aux;
+            }
+        }
+    }
+    for (int k = 1; k < contI; k++) {
+        for ( j = 0; j < contI - 1; j++) {
+            
+            if (i[j] < i[j + 1]) {
+                aux          = i[j];
+                i[j]     = i[j + 1];
+                i[j + 1] = aux;
+            }
+        }
+    }
+    for(int o=0;o<contP;o++){
+        cout<<p[o]<<endl;
+    }
+    for(int o=0;o<contI;o++){
+        cout<<i[o]<<endl;
+    }
+	return 0;
+}
