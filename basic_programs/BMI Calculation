@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    double x,y;
+    scanf("%lf %lf", &x, &y);
+    printf("%.2lf", x/(y*y));
+	return 0;
+}
