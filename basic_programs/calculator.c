@@ -4,11 +4,11 @@ int main()
 {
   int num1, num2;
   char act;
-  printf("Enter first number : ");
+  printf("Enter First Number : ");
   scanf("%d", &num1);
-  printf("Enter second number : ");
+  printf("Enter Second Number : ");
   scanf("%d", &num2);
-  printf("Enter desired action : ");
+  printf("Enter Desired Action : ");
   scanf("%d", &act);
   switch (act)
   {
