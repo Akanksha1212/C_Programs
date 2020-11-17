@@ -1,19 +1,19 @@
-    #include <stdio.h>
-    int main()
-    {
-        int number, originalNumber, remainder, result = 0;
-        printf("Enter a three digit integer: ");
-        scanf("%d", &number);
-        originalNumber = number;
-        while (originalNumber != 0)
-        {
-            remainder = originalNumber%10;
-            result += remainder*remainder*remainder;
-            originalNumber /= 10;
-        }
-        if(result == number)
-            printf("%d is an Armstrong number.",number);
-        else
-            printf("%d is not an Armstrong number.",number);
-        return 0;
-    }
+#include <stdio.h>
+
+int main() 
+{
+  int num,l,arms=0;
+  scanf("%d",&num);
+  int tmp=num;
+  for(l=0;tmp>0;tmp/=10,l++);
+    tmp=num;
+  for(int c=0;c<l;c++,tmp/=10)
+    arms+=pow(tmp%10,l);
+
+  if(num==arms)
+  printf("Armstrong Number");
+  else
+  printf("Not an armstrong number");
+return 0;
+}
+
