@@ -1,0 +1,12 @@
+node* search(node ** tree, int val) {
+if(!(*tree)) {
+   return NULL;
+  }
+ if(val == (*tree)->data) {
+   return *tree;
+  } else if(val < (*tree)->data) {
+    search(&((*tree)->left), val);
+  } else if(val > (*tree)->data){
+    search(&((*tree)->right), val);
+  }
+ }
