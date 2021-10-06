@@ -4,12 +4,12 @@
 
 void main()
 {
-	int n;
+	int n,i,sum=0;
 	printf("Enter the total no of numbers:");
 	scanf("%d",&n);
 	int a[n];
 	printf("Enter 1 to %d by leaving one number",n);
-	int i,sum=0;
+
 	for(i=0;i<n-1;i++)
 	{
 		scanf("%d",&a[i]);
