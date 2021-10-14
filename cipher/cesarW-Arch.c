@@ -7,7 +7,7 @@ void codify(FILE* arq, int k, int n, int m)
     char senha[m];
     int count;
     FILE* arq_2;
-    arq_2 = fopen("data.hash", "w");
+    arq_2 = fopen("data.txt", "w");
     while (1) {
         int c = fgetc(arq);
         if (c == EOF || c == '\n') {
@@ -58,22 +58,22 @@ int main()
     int n;
     int m;
     int k;
-    p("Digite o número de caracteres das senhas!");
+    p("Type the maximum character length for passwords!");
     scanf("%d", &m);
-    p("Digite o número de senhas!");
+    p("Type passwords quantity!");
     scanf("%d", &n);
-    p("Digite o número de criptografia!");
+    p("Type encrypt number!");
     scanf("%d", &k);
-    char senha[m];
-    arq = fopen("data.sql", "w");
+    char passw[m];
+    arq = fopen("data.txt", "w");
     while (n > 0) {
-        p("Digite a senha!");
-        scanf("%s", &senha);
-        fprintf(arq, "%s\n", senha);
+        p("Type you password!");
+        scanf("%s", &passw);
+        fprintf(arq, "%s\n", passw);
         n--;
     }
     fclose(arq);
-    arq = fopen("data.sql", "r");
+    arq = fopen("data.txt", "r");
     codify(arq, k, n, m);
     fclose(arq);
 }
