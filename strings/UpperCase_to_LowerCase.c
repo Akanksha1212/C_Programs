@@ -20,6 +20,6 @@ void main()
 		}
 	}
 	
-	printf("\n Lower Case String is: %s",ch);
+	printf("\n Lower Case String of the given upperCase String is:\n %s",ch);
 	getch();
 }
