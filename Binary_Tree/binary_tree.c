@@ -17,6 +17,7 @@ Binary_Tree *root=NULL;
 FILE *output_file;
 
 /* Function to dynamically create Binary Tree nodes. */
+
 Binary_Tree *create_node(Binary_Tree *parent, char data)
 {
         Binary_Tree *temp;
@@ -36,6 +37,7 @@ Binary_Tree *create_node(Binary_Tree *parent, char data)
 }
 
 /* Function to create Binary Tree on which operations will be performed. */
+
 void createTree()
 {
         root                                    = create_node(NULL, 'A');
@@ -55,6 +57,7 @@ void createTree()
 }
 
 /* Function to set generation numbers to all nodes in Binary Tree. */
+
 void members_generation(Binary_Tree *root)
 {
         if(root)
@@ -67,6 +70,7 @@ void members_generation(Binary_Tree *root)
 }
 
 /* Function to print Generation nodes of given node in Binary Tree. */
+
 void print_generation(Binary_Tree *root, Binary_Tree *temp)
 {
 	if(root) 
@@ -82,6 +86,7 @@ void print_generation(Binary_Tree *root, Binary_Tree *temp)
 }
 
 /* Recursive Function to perform Inorder Traversal on Binary Tree. */
+
 void inorder(Binary_Tree *root)
 {
 	members_generation(root);
@@ -94,6 +99,7 @@ void inorder(Binary_Tree *root)
 }
 
 /* Recursive Function to find leaves in Binary Tree. */
+
 void number_of_leaves(Binary_Tree *root)
 {
         if(!root)
@@ -107,6 +113,7 @@ void number_of_leaves(Binary_Tree *root)
 }
 
 /* Recursive Function to find location of given input data in FILE. */
+
 Binary_Tree *find_node(Binary_Tree *root, char key)
 {
 	Binary_Tree *found = NULL;
@@ -129,6 +136,7 @@ Binary_Tree *find_node(Binary_Tree *root, char key)
 }
 
 /* Driver function to start the program. */ 
+
 int main(int argc, char const *argv[])
 {
         int test_case, inorder_flag=0, leaf_flag=0, num=1;
